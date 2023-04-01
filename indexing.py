@@ -66,7 +66,7 @@ def make_list_citations(initial_string):
         return []
 
 file_count = 26
-filepath=r"C:\Users\Balaji\OneDrive\Desktop\scholarly/Re-cleaned-pr0f_data_cleaned"
+filepath=r"Re-cleaned-pr0f_data_cleaned"
 for file_index in range(file_count):   
 
     try:
@@ -103,10 +103,10 @@ for file_index in range(file_count):
 print("Number of keywords in name and affiliation index - "+str(len(prof_name_and_affiliation_index)))
 print("Number of keywords in topic and paper index - "+str(len(prof_topic_and_paper_index)))
 
-with open(r'C:\Users\Balaji\OneDrive\Desktop\scholarly/Re-cleaned-pr0f_data_cleaned\name_and_affiliation_index_full.json', 'w+',encoding='utf8') as outfile:
+with open(r'Re-cleaned-pr0f_data_cleaned\name_and_affiliation_index_full.json', 'w+',encoding='utf8') as outfile:
     json.dump(prof_name_and_affiliation_index, outfile)
 
-with open(r'C:\Users\Balaji\OneDrive\Desktop\scholarly/Re-cleaned-pr0f_data_cleaned\topic_and_paper_index_full.json', 'w+',encoding='utf8') as outfile:
+with open(r'Re-cleaned-pr0f_data_cleaned\topic_and_paper_index_full.json', 'w+',encoding='utf8') as outfile:
     json.dump(prof_topic_and_paper_index, outfile)
 
 

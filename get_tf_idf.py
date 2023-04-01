@@ -14,10 +14,10 @@ sys.path.append('../helper_functions/')
 from common_functions import get_id
 
 # list of number of professors in each csv
-csv_sizes = list(pd.read_csv(r'C:\Users\Balaji\OneDrive\Desktop\scholarly/Re-cleaned-pr0f_data_cleaned/metadata.csv', header=None)[0])
+csv_sizes = list(pd.read_csv(r'Re-cleaned-pr0f_data_cleaned/metadata.csv', header=None)[0])
 
 # read TF-IDF scores from JSON file
-with open(r'C:\Users\Balaji\OneDrive\Desktop\scholarly/Re-cleaned-pr0f_data_cleaned/tf_idf_scores_topic_and_paper_full.json') as f:
+with open(r'Re-cleaned-pr0f_data_cleaned/tf_idf_scores_topic_and_paper_full.json') as f:
     tf_idf_score = json.load(f)
 
 def get_tf_idf_list(parsed_query,n=99999999999):

@@ -63,7 +63,7 @@ def make_list_citations(initial_string):
 file_count = 26
 
 # read cleaned CSV files
-filepath=r'C:\Users\Balaji\OneDrive\Desktop\scholarly/Re-cleaned-pr0f_data_cleaned/'
+filepath=r'Re-cleaned-pr0f_data_cleaned/'
 data_files = [pd.read_csv(filepath+'/pr0f_data-'+chr(ord('a')+file_index)+'-cleaned.csv',header=None,encoding='utf8') for file_index in range(file_count) ]
 
 def read_prof_information(prof_id):   
