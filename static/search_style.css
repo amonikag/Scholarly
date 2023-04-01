@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Aladin');
 * {
   margin: 0;
   padding: 0;
@@ -73,20 +73,19 @@ header .navbar {
 }
 
 .navbar .logo {
-  font-family: 'Aladin', cursive;
     display:inline-flex;
   }
   
 .navbar .logo a {
+font-family: 'Aladin', cursive;
 text-decoration: none;
-font-size: 23px;
+font-size: 35px;
 color: #000;
 font-weight: 500;
 padding-top: 60px;
 }
 
 .navbar .logo img {
-  font-family: aladin;
 margin-left: -35px;
 margin-top: -15px;
 width: 78px;
@@ -118,7 +117,7 @@ header .text-content {
   display:block;
   cursor: pointer;
   padding: 15px 20px;
-  background: #6680ad;
+  background: #8b7cffad;
   border: 1px solid #e2ddffcb;
   border-radius: 15px;
   align-items: center;

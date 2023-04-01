@@ -116,7 +116,7 @@ def boolean_retrieval(parsed_query, use_topic_and_paper_index, AND = True):
         len_list = [len(docs_with_word) for docs_with_word in docs_list]
 
         # Handle the case when no match.
-        if len(docs_list) == 0:
+        if not any(docs_list):
             return []
 
         # For efficiency, sort lists by their sizes, then merge.

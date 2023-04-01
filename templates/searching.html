@@ -12,9 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lemon' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
       
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
@@ -120,7 +118,7 @@
                              <div class="col-md-10" style="padding:0px 5px 0px 30px;">
                                  <h5 style="padding:0;margin:0;"><b>{{prof.name}}</b></h5>                                                                                                            
                                  {{prof.affiliation}} <br>
-                                 Verified Email at <a href="https://{{prof.email}}">  {{prof.email}} </a><br>
+                                 Verified Email at <a href="https://{{prof.email}}" target="_blank">  {{prof.email}} </a><br>
          
                                  <div class="text-muted" style="font-size:10pt;">
                                      {% for topic in prof.topics_list %}
@@ -134,84 +132,16 @@
                          </div>                
             
                          <center style="margin-left: 100px;"> 
-                             <a class="btn btn-outline-secondary btn-sm" href="{{prof.homepage}}">   Homepage</a>      
-                             <a class="btn btn-outline-secondary btn-sm" href="https://scholar.google.com/citations?user={{prof.scholar_id}}&pagesize=100"> <i class="fa fa-google"></i> Scholar Page</a>                          
-                             <button class="btn btn-outline-secondary btn-sm" onclick="load_citation_info({{loop.index0}})">   Load Citation Info  </button>
+                             <a class="btn btn-outline-secondary btn-sm" href="{{prof.homepage}}" target="_blank">   Homepage</a>      
+                             <a class="btn btn-outline-secondary btn-sm" href="https://scholar.google.com/citations?user={{prof.scholar_id}}&pagesize=100" target="_blank"> <i class="fa fa-google"></i> Scholar Page</a>                          
+                             <button class="btn btn-outline-secondary btn-sm" onclick="load_citation_info({{loop.index0}})" data-toggle="modal" data-target="#citation_info_modal">   Load Citation Info  </button>
                              <button class="btn btn-outline-secondary btn-sm" onclick="load_paper_info({{loop.index0}})" data-toggle="modal" data-target="#paper_info_modal">  See Papers </button>                                    
                          </center> 
                       
                      </div> 
  
                      {% endfor %}
-                    <!-- Professor Profile Skeletons -->
-                    <!-- <div class="skeleton">
-                        <div class="skeleton-img"></div>
-                        <div class="skeleton-text">
-                            <h2 class="skeleton-title"></h2>
-                            <p class="skeleton-description">
-                              <span></span>
-                              <span></span>
-                            </p>
-                            <ul class="skeleton-skills">
-                                <li class="skill"></li>
-                                <li class="skill"></li>
-                                <li class="skill"></li>
-                            </ul>
-                            <a href="#" class="skeleton-link"></a>
-                        </div>
-                    </div> -->
-
-                    <!-- <div class="skeleton">
-                        <div class="skeleton-img"></div>
-                        <div class="skeleton-text">
-                            <h2 class="skeleton-title"></h2>
-                            <p class="skeleton-description">
-                              <span></span>
-                              <span></span>
-                            </p>
-                            <ul class="skeleton-skills">
-                                <li class="skill"></li>
-                                <li class="skill"></li>
-                                <li class="skill"></li>
-                            </ul>
-                            <a href="#" class="skeleton-link"></a>
-                        </div>
-                    </div>
-
-                    <div class="skeleton">
-                        <div class="skeleton-img"></div>
-                        <div class="skeleton-text">
-                            <h2 class="skeleton-title"></h2>
-                            <p class="skeleton-description">
-                              <span></span>
-                              <span></span>
-                            </p>
-                            <ul class="skeleton-skills">
-                                <li class="skill"></li>
-                                <li class="skill"></li>
-                                <li class="skill"></li>
-                            </ul>
-                            <a href="#" class="skeleton-link"></a>
-                        </div>
-                    </div>
-
-                    <div class="skeleton">
-                        <div class="skeleton-img"></div>
-                        <div class="skeleton-text">
-                            <h2 class="skeleton-title"></h2>
-                            <p class="skeleton-description">
-                              <span></span>
-                              <span></span>
-                            </p>
-                            <ul class="skeleton-skills">
-                                <li class="skill"></li>
-                                <li class="skill"></li>
-                                <li class="skill"></li>
-                            </ul>
-                            <a href="#" class="skeleton-link"></a>
-                        </div>
-                    </div> -->
-                    <!-- Professor Profile Skeletons -->
+                    
                 </div>
                 {% endif %}                                           
             </div>
@@ -221,7 +151,7 @@
                 
                 <br><br>    <br><br>            
                 <div class="card" id="citation_data_outer" style="position:fixed;padding:0;margin-top:-57px;">
-                    
+
                     <div class="card-body" style="width:410px">                                                
                         <div id="cit_data_div"></div>
                         <div class="chart_div" style="width:411px;margin-left:-21px;margin-top:37px;background-color: #e6e3ffb9;"><canvas id="chart" width="370px !important"></canvas></div>                        
@@ -332,7 +262,7 @@
             for(var paper_index in prof_data[prof_index].papers_title_list) {                            
                 var paper_title = prof_data[prof_index].papers_title_list[paper_index];
                 var paper_url = prof_data[prof_index].papers_url_list[paper_index];
-                html = html + '<a href="'+paper_url+'" class="list-group-item list-group-item-action">'+paper_title+'</a>';
+                html = html + '<a href="'+paper_url+'" target="_blank" class="list-group-item list-group-item-action">'+paper_title+'</a>';
             }                       
             return html;
         }       

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Aladin');
 
 * {
   margin: 0;
@@ -81,9 +82,9 @@ header .navbar {
 .navbar .logo a {
   font-family: 'Aladin', cursive;
   text-decoration: none;
-  font-size: 39px;
+  font-size: 50px;
   color: #000;
-  font-weight: 500;
+  font-weight: 600;
   padding-top: 67px;
 }
 
@@ -111,7 +112,7 @@ header .navbar {
   color: #f2f2f2;
 }
 
-.navbar .buttons input {
+.navbar .buttons button {
   outline: none;
   color: #f2f2f2;
   font-size: 18px;
@@ -126,8 +127,15 @@ header .navbar {
   background-image: linear-gradient(135deg, #94ddf5 10%, #3324a2 100%);
 }
 
-.navbar .buttons input:hover {
+.navbar .buttons button:hover {
   transform: scale(0.8);
+}
+
+.navbar .buttons button a{
+  color: #f2f2f2;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 header .text-content {
@@ -160,7 +168,7 @@ header .text-content {
 }
 
 header .box .search-arrow h2{
-  margin-top:-40px;
+  margin-top:-55px;
 }
 header .box .search-arrow img {
   margin-top:-190px;
@@ -193,8 +201,8 @@ header .box .search-arrow img {
   max-width: 450px;
   float: right;
   display: -webkit-box;
-  margin-right: 200px;
-  margin-top: -470px;
+  margin-right: 150px;
+  margin-top: -320px;
   position: relative;
 
 }

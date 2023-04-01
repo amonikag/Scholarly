@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title> An Academic Search Engine</title>
+  <link rel="stylesheet" href="static/contact_style.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lemon' rel='stylesheet'>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header>
+    <form class="form-inline">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="/" style="margin-top: -60px;">
+            <img src="static/images/searching-search-logo.png">Scholarly
+          </a>
+        </div>
+      </nav>
+
+    </form>
+  </header>
+
+  <section class="main_section">
+    <div class="section">
+      <div class="container" id="search_error_container" style="z-index:20;padding:40px;">
+        <div class="page_title" style="align-self: center;">
+          <h1 style="font-family: 'Lemon';  font-size:3.5rem;">About this project</h1>
+        </div>
+        <div class="text-content">
+
+          <p>
+            Scholarly is an academic search engine allows users to
+            search for professors based on name, university, research areas and paper titles using different retrieval
+            methods.The engine also allows users to sort the search results based on criteria like h-index, citations in
+            the last five years etc.</p>
+          <br>
+
+          <div class="title" style="align-self: center;">
+            <h1 style="font-family: 'Lemon'; font-size: 1.5 rem;"> Why Scholarly?</h1>
+
+            <p>
+              Students often find the need to search for professors based on various criteria such as name, university,
+              research topics, top cited papers and rank them based on factors like citations or h-index. A simple
+              Google search may not allow you to first shortlist professors based on whether they do research in
+              "adversarial machine learning" and then rank them according to the number of citations that they have in
+              the last 5 years. We have developed a search engine that can cater to the needs of students looking for
+              professors to approach for projects, internships or jobs.
+            </p>
+            <br>
+
+            <div class="terms" style="align-self: center;">
+              <h1 style="font-family: 'Lemon'; font-size: 1.5 rem;"> Terms used in our project</h1>
+              <br>
+              <dl>
+                <dt> H-index </dt>
+                <dd> The h-index is an author-level metric that measures both the productivity and citation impact of
+                  the publications, initially used for an individual scientist or scholar. The h-index is calculated by
+                  counting the number of publications for which an author has been cited by other authors at least that
+                  same number of times. For instance, an h-index of 17 means that the scientist has published at least
+                  17 papers that have each been cited at least 17 times.</dd>
+
+                <dt>i10 index</dt>
+                <dd> It is another commonly used research metric by the authors/researchers. i-10 index is provided by
+                  Google Scholar. It can define as a measure of having publications with at least 10 citations. For
+                  example, if an author/researcher’s i-10 index is 6, it indicates that six of his/her publications are
+                  cited 10 times.</dd>
+                <br>
+
+                <dt> Retrieval methods </dt><br>
+                <ul>
+                  <li>Boolean Retrieval</li><br>
+
+                  <ol>
+                    <li>AND</li>
+
+                    <dd> Only those professors would be shortlisted who had all the words from the search query on their
+                      scholar page. To do this, we simply compared the postings lists of all the words in the search
+                      query
+                      pairwise, and stored the intersection of all of them.
+                    </dd><br>
+
+                    <li>Optimisation </li>
+                    <dd> Since we are only interested in the final postings list, that is, the list containing all the
+                      words
+                      in the phrase query, the order in which we build this does not matter. Hence, to speed up the
+                      process,
+                      we sort the postings lists in the increasing order of length. Since we use the intersection of two
+                      postings lists in the next iteration, this ensures the fewest number of computations overall.
+                    </dd><br>
+
+                    <li>OR </li>
+                    <dd> Here we return the pages of all the professors who even contain one word from the search query.
+                      However, we sort matches according to the number of matches they have, that is, if a professor’s
+                      page
+                      matches 4 out of 5 words from the search query, it will be displayed higher than a professor’s
+                      page
+                      which matches 3 out of 5 words from the query. In case two pages match the same number of words
+                      from
+                      a
+                      search query, higher precedence will be given to the page that matches all the words in the query
+                      more
+                      times. For example, the word "science" may appear on a page more than once, this will increase the
+                      tiebreaker score.</dd><br>
+                  </ol>
+
+                  <ul>
+                    <li>TF-IDF Scores</li><br>
+                    <dd> Users can also get search results based on Term Frequency-Inverse Document Frequency (TF-IDF)
+                      scores. It is a numerical statistic widely used in information retrieval and text mining to
+                      reflect
+                      how important a word is to a document in a collection or corpus. We consider professors as
+                      documents.
+                      Term Frequency is a measure of how frequently a word/term appears in a document, normalized by the
+                      document size.<br>
+
+                      TF(i, j) = (count of ith term in jth document)/(total terms in jth document)<br>
+                      IDF(i) = (total no. of documents)/(no. of documents containing ith term)
+                    </dd>
+                  </ul>
+
+
+                  </dd>
+              </dl>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
