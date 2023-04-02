@@ -7,7 +7,9 @@ from get_tf_idf import get_tf_idf_list
 from querying import phrase_retrieval, boolean_retrieval, default_ranking_metric
 from flask import Flask, render_template, request, redirect, send_from_directory
 app = Flask(__name__,template_folder="templates",static_folder='static')
-app.debug = True
+
+if __name__ == "__main__":
+    app.run(debug=False,host='0.0.0.0')
 
 print("Files loaded. Now, open in browser.")
 
